@@ -17,8 +17,14 @@ from django.conf.urls import url
 from django.contrib import admin
 
 from . import view
+from . import testdb
+from . import search
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', view.hello),
+    url(r'^$', view.index),
+    url(r'^testdb$', testdb.testdb),
+    url(r'^search_form$', search.search_form),
+    url(r'^search$', search.search),
+    url(r'^search_post$', search.search_post),
 ]
